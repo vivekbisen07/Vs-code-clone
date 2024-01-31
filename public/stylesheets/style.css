@@ -1,0 +1,151 @@
+*{
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+#main{
+  width: 100%;
+  height: 100%;
+  background-color: aliceblue;
+  display: flex;
+  font-family: gilroy;
+}
+#left{
+  width: 25%;
+  height: 100%;
+  background:linear-gradient(rgb(111, 111, 111) rgb(30, 28, 28));
+  padding: 2vw;
+  color: #131212;
+  border: 2px solid rgb(30, 29, 29);
+  position: relative;
+}
+
+
+form input{
+  margin-top: 8px;
+  margin-bottom:5px;
+  width: 100%;
+  height: 25px;
+  border-radius: 5px;
+  padding: 5px px;
+  border: 2px solid cornflowerblue;
+}
+#right{
+  width: 75%;
+  height: 100%;
+  border: 2px solid rgb(30, 30, 29);
+  position: relative;
+  /* background-color: chartreuse; */
+}
+#right h3{
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+  
+}
+#mainicon{
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+}
+.icons>i{
+ margin-left: 12px;
+ font-size: 1.4vw;
+}
+
+.icons>a{
+   font-size: 1.3vw;
+  margin-left: 12px;
+  text-decoration: none;
+}
+#mainicon>h4{
+  font-size: 1.3vw;
+  margin-top: 15px;
+}
+.icons:hover i{
+  cursor: pointer;
+}
+
+
+.filename{
+  display: flex;
+  gap: 10px;
+  font-size: 1.4vw;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.filename>a{
+  font-size: 1.3vw;
+  text-decoration: none;
+  color: #131212;
+}
+#open>h5{
+  font-size: 1.3vw;
+}
+.filename>.sideicon>a{
+  opacity: 0;
+  text-decoration:none ;
+  color: #131212;
+}
+.filename:hover a{
+  opacity: 1;
+}
+
+
+.sideicon>i{
+  margin-left: 20px;
+  opacity: 0;
+}
+.filename:hover i {
+  opacity: 1;
+}
+#createfile{
+  display: none;
+}
+#createfolder{
+  display: none;
+}
+
+
+
+#rnav{
+  width: 100%;
+  height: 53px;
+ 
+}
+#open{
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1vw;
+ 
+}
+textarea{
+  width: 100%;
+  height: 95%;
+  border: none;
+  outline: none;
+  font-family: "Consolas";
+  padding: 1vw;
+  font-size: 1.3vw;
+}
+#right>form{
+
+  width: 100%;
+  height: 91%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+ 
+}
+
+

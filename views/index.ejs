@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+<body>
+  <div id="main">
+    
+    <div id="left">
+       <div id="lpart">
+        <div id="btn">
+          <h2>Sasta vs code</h2>
+          <div id="mainicon">
+           <h4>Folder name</h4>
+           <div class="icons">
+            <i  id="fileicon" class="ri-file-3-line"></i>
+           <i id="foldericon" class="ri-folder-fill"></i>
+           <a href="/"><i id="refreshicon" class="ri-restart-line"></i></a>
+           </div>
+          </div>
+        </div>
+       <div class="form">
+        <form id="createfile" action="/createfile">
+          <input type="text" name="filename" placeholder="file-name">
+        </form>
+       </div>
+       <div class="form" >
+        <form id="createfolder" action="/createfolder">
+          <input type="text" name="foldername" placeholder="folder-name">
+        </form>
+       </div>
+       <div id="files">
+       
+          <% files.forEach(function(file){ %>
+           <% if(file.folderhaikya=== true){%>
+            <div class="filename">
+             <a href="/files/<%= file.name%>"> <h5> <i class="ri-folder-3-line"></i><%= file.name %></h5></a>
+              <div class="sideicon">
+                <i class="ri-pencil-fill"></i>
+             <a href="/deletefolder/<%=file.name%>"> <i class="ri-delete-bin-6-fill"></i></a>
+              </div>
+  
+            </div>
+           <%}else{%>
+            <div class="filename">
+             <a href="/files/<%= file.name%>"> <h5> <i class="ri-file-3-line"></i><%= file.name %></h5></a>
+              <div class="sideicon">
+                <i class="ri-pencil-fill"></i>
+             <a href="/deletefile/<%= file.name%>"> <i class="ri-delete-bin-6-fill"></i></a>
+              </div>
+  
+            </div>
+          <% }%>
+          <% }) %>
+        </div>
+       </div>
+      
+       
+       </div>
+   
+    <div id="right">
+      <div id="rnav">
+        <div id="open">
+        
+        </div>
+      </div>
+      <h3>Nothing is here</h3>
+    </div>
+  </div>
+
+  <script>
+      // function chaluBand(){
+      //   document.querySelectorAll("form").forEach( function(e){
+      //   e.style.display = "none";
+      // })
+      // }
+   
+  
+    // function createfile(){
+    //   var flag =0;
+    //   document.querySelector(" .icons #fileicon").addEventListener("click",function(){
+    //   //  chaluBand();
+    //   if(flag==0){
+
+    //     document.querySelector(".form").style.display = "initial";
+    //     flag=1;
+    //   }
+    //   else{
+    //     console.log("hey");
+    //     document.querySelector(".form").style.display = "none";
+    //     flag=0;
+    //   }
+    
+
+    //  })
+    // }
+    //  function createfolder(){
+    //   var folderflag=0;
+      
+    //   document.querySelector(" .icons #foldericon").addEventListener("click",function(){
+    //   //  chaluBand();
+    //   // console.log("helo")
+    //   if(folderflag==0){
+
+    //     document.querySelector("#createfolder").style.display = "initial";
+    //     folderflag = 1;
+
+    //   }
+    //   else{
+    //     console.log("hey");
+    //     document.querySelector("#createfolder").style.display= "none"
+    //     folderflag = 0;
+    //   }
+    
+
+    //  })
+    //  }
+   
+    //  createfile();
+    //  createfolder();
+
+    function chaluBand(){
+        document.querySelectorAll("form").forEach(function(e){  
+        e.style.display = "none";
+      })
+      }
+
+      document.querySelector(".icons #fileicon").addEventListener("click",function(){
+        chaluBand();
+        document.querySelector("#createfile").style.display = "initial";
+      })
+      document.querySelector(".icons #foldericon").addEventListener("click",function(){
+        chaluBand();
+        document.querySelector("#createfolder").style.display = "initial";
+      })
+      document.querySelector(".icons #refreshicon").addEventListener("click",function(){
+        chaluBand();
+        
+      })
+      window.addEventListener("keydown",function(e){
+        // console.log(e.keyCode);
+        if(e.keyCode===27){
+          chaluBand();
+          document.querySelectorAll("form input").forEach(function(elem){
+            elem.value="";
+          })
+        }
+      })
+  </script>
+</body>
+</html>
